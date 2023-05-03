@@ -13,11 +13,11 @@ namespace Sorting_comparison
         {
             var table = new ConsoleTable(headers.Cast<string>().ToArray());
 
-
             for (int i = 0; i < grids.Count(); i++)
             {
                 table.AddRow(grids.ElementAt(i).ToArray());
             }
+
             table.Write(Format.Alternative);
         }
     }

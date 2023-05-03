@@ -70,16 +70,18 @@
                         }
                     case 4:
                         {
-                            List<Analytics> analytics = new List<Analytics>();
-                            analytics.Add(TestBubbleSort(array));
-                            analytics.Add(TestCombSort(array));
-                            analytics.Add(TestCocktailSort(array));
-                            analytics.Add(TestGnomeSort(array));
-                            analytics.Add(TestFlaggedBubbleSort(array));
-                            analytics.Add(TestStoneSort(array));
-                            analytics.Add(TestSpiderSort(array));
-                            analytics.Add(TestInsertionSort(array));
-                            analytics.Add(TestSelectionSort(array));
+                            List<Analytics> analytics = new List<Analytics>
+                            {
+                                TestBubbleSort(array),
+                                TestCombSort(array),
+                                TestCocktailSort(array),
+                                TestGnomeSort(array),
+                                TestFlaggedBubbleSort(array),
+                                TestStoneSort(array),
+                                TestSpiderSort(array),
+                                TestInsertionSort(array),
+                                TestSelectionSort(array)
+                            };
                             OutputHelper.OutputTableToConsole(headers, analytics);
                             break;
                         }
@@ -114,64 +116,57 @@
 
             Console.WriteLine($"Количество элементов в массиве: {array.Length}");
 
+            List<Analytics> analytics = new List<Analytics>();
+
             switch (submenuSortingChoice)
             {
                 case 1:
                     {
-                        var analytics = TestBubbleSort(array);
-                        OutputHelper.OutputTableToConsole(headers, new List<Analytics>() { analytics });
+                        analytics.Add(TestBubbleSort(array));
                         break;
                     }
                 case 2:
                     {
-                        var analytics = TestCocktailSort(array);
-                        OutputHelper.OutputTableToConsole(headers, new List<Analytics>() { analytics });
+                        analytics.Add(TestCocktailSort(array));
                         break;
                     }
                 case 3:
                     {
-                        var analytics = TestCombSort(array);
-                        OutputHelper.OutputTableToConsole(headers, new List<Analytics>() { analytics });
+                        analytics.Add(TestCombSort(array));
                         break;
                     }
                 case 4:
                     {
-                        var analytics = TestFlaggedBubbleSort(array);
-                        OutputHelper.OutputTableToConsole(headers, new List<Analytics>() { analytics });
+                        analytics.Add(TestFlaggedBubbleSort(array));
                         break;
                     }
                 case 5:
                     {
-                        var analytics = TestGnomeSort(array);
-                        OutputHelper.OutputTableToConsole(headers, new List<Analytics>() { analytics });
+                        analytics.Add(TestGnomeSort(array));
                         break;
                     }
                 case 6:
                     {
-                        var analytics = TestInsertionSort(array);
-                        OutputHelper.OutputTableToConsole(headers, new List<Analytics>() { analytics });
+                        analytics.Add(TestInsertionSort(array));
                         break;
                     }
                 case 7:
                     {
-                        var analytics = TestSelectionSort(array);
-                        OutputHelper.OutputTableToConsole(headers, new List<Analytics>() { analytics });
+                        analytics.Add(TestSelectionSort(array));
                         break;
                     }
                 case 8:
                     {
-                        var analytics = TestSpiderSort(array);
-                        OutputHelper.OutputTableToConsole(headers, new List<Analytics>() { analytics });
+                        analytics.Add(TestSpiderSort(array));
                         break;
                     }
                 case 9:
                     {
-                        var analytics = TestStoneSort(array);
-                        OutputHelper.OutputTableToConsole(headers, new List<Analytics>() { analytics });
+                        analytics.Add(TestStoneSort(array));
                         break;
                     }
-
             }
+            OutputHelper.OutputTableToConsole(headers, analytics);
         }
 
         private static Analytics TestBubbleSort(int[] array)
@@ -188,7 +183,7 @@
         {
             int[] arrayCopy = (int[])array.Clone();
             int swaps = 0, comparings = 0;
-            var analytics = ResourceListener.GetAnalytics(() => Sortings.CocktailSort(arrayCopy, out swaps, out comparings), "Коктельная сортировка");
+            var analytics = ResourceListener.GetAnalytics(() => Sortings.CocktailSort(arrayCopy, out swaps, out comparings), "Шейкерная сортировка");
             analytics.Swaps = swaps;
             analytics.Comparings = comparings;
             return analytics;
