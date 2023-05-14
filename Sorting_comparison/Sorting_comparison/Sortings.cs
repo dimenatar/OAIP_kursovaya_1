@@ -2,7 +2,7 @@
 {
     public static class Sortings
     {
-        public static void BubbleSort(int[] arr, out int swaps, out int comparings)
+        public static void BubbleSort(int[] arr, out ulong swaps, out ulong comparings)
         {
             swaps = 0;
             comparings = 0;
@@ -24,7 +24,7 @@
             }
         }
 
-        public static void CocktailSort(int[] arr, out int swaps, out int comparings)
+        public static void CocktailSort(int[] arr, out ulong swaps, out ulong comparings)
         {
             swaps = comparings = 0;
             bool swapped;
@@ -65,7 +65,7 @@
             while (swapped);
         }
 
-        public static void SelectionSort(int[] arr, out int swaps, out int comparings)
+        public static void SelectionSort(int[] arr, out ulong swaps, out ulong comparings)
         {
             swaps = comparings = 0;
             int n = arr.Length;
@@ -92,7 +92,7 @@
             }
         }
 
-        public static void InsertionSort(int[] arr, out int swaps, out int comparings)
+        public static void InsertionSort(int[] arr, out ulong swaps, out ulong comparings)
         {
             swaps = comparings = 0;
             int n = arr.Length;
@@ -112,7 +112,7 @@
             }
         }
 
-        public static void GnomeSort(int[] arr, out int swaps, out int comparings)
+        public static void GnomeSort(int[] arr, out ulong swaps, out ulong comparings)
         {
             swaps = comparings = 0;
             int n = arr.Length;
@@ -136,7 +136,7 @@
             }
         }
 
-        public static void SpiderSort(int[] arr, out int swaps, out int comparings)
+        public static void SpiderSort(int[] arr, out ulong swaps, out ulong comparings)
         {
             swaps = comparings = 0;
             int left = 0;
@@ -174,7 +174,7 @@
             }
         }
 
-        public static void FlaggedBubbleSort(int[] arr, out int swaps, out int comparings)
+        public static void FlaggedBubbleSort(int[] arr, out ulong swaps, out ulong comparings)
         {
             swaps = comparings = 0;
             int n = arr.Length;
@@ -199,7 +199,7 @@
             }
         }
 
-        public static void StoneSort(int[] arr, out int swaps, out int comparings)
+        public static void StoneSort(int[] arr, out ulong swaps, out ulong comparings)
         {
             swaps = comparings = 0;
             int n = arr.Length;
@@ -246,7 +246,7 @@
             }
         }
 
-        public static void CombSort(int[] arr, out int swaps, out int comparings)
+        public static void CombSort(int[] arr, out ulong swaps, out ulong comparings)
         {
             swaps = comparings = 0;
             int n = arr.Length;

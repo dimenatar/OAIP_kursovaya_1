@@ -7,8 +7,8 @@
         private long _endTime;
         private long _elapsedTime;
 
-        public int Swaps { get; set; }
-        public int Comparings { get; set; }
+        public ulong Swaps { get; set; }
+        public ulong Comparings { get; set; }
 
         public long ElapsedTime => _elapsedTime;
 

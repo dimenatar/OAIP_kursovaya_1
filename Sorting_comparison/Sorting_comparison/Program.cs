@@ -55,21 +55,23 @@
                             }
                             Console.WriteLine("Введите название файла");
                             string path;
+
                             while ((path = Console.ReadLine()) == null)
                             {
                                 Console.WriteLine("Пожалуйста, введите коректное название файла");
                             }
-                            FileHelper.CreateFileWithRandomElements(path, amount, delimiter);
+
+                            array = FileHelper.CreateFileWithRandomElements(path, amount, delimiter);
                             break;
                         }
                     case 3:
                         {
                             PerformSingleSortingsSubMenu(array, headers);
                             break;
-
                         }
                     case 4:
                         {
+                            Console.WriteLine($"Размер массива: {array.Length}");
                             List<Analytics> analytics = new List<Analytics>
                             {
                                 TestBubbleSort(array),
@@ -172,7 +174,7 @@
         private static Analytics TestBubbleSort(int[] array)
         {
             int[] arrayCopy = (int[]) array.Clone();
-            int swaps = 0, comparings = 0;
+            ulong swaps = 0, comparings = 0;
             var analytics = ResourceListener.GetAnalytics(() => Sortings.BubbleSort(arrayCopy, out swaps, out comparings), "Сортировка пузырьком");
             analytics.Swaps = swaps;
             analytics.Comparings = comparings;
@@ -182,7 +184,7 @@
         private static Analytics TestCocktailSort(int[] array)
         {
             int[] arrayCopy = (int[])array.Clone();
-            int swaps = 0, comparings = 0;
+            ulong swaps = 0, comparings = 0;
             var analytics = ResourceListener.GetAnalytics(() => Sortings.CocktailSort(arrayCopy, out swaps, out comparings), "Шейкерная сортировка");
             analytics.Swaps = swaps;
             analytics.Comparings = comparings;
@@ -192,7 +194,7 @@
         private static Analytics TestCombSort(int[] array)
         {
             int[] arrayCopy = (int[])array.Clone();
-            int swaps = 0, comparings = 0;
+            ulong swaps = 0, comparings = 0;
             var analytics = ResourceListener.GetAnalytics(() => Sortings.CombSort(arrayCopy, out swaps, out comparings), "Сортировка расческой");
             analytics.Swaps = swaps;
             analytics.Comparings = comparings;
@@ -202,7 +204,7 @@
         private static Analytics TestFlaggedBubbleSort(int[] array)
         {
             int[] arrayCopy = (int[])array.Clone();
-            int swaps = 0, comparings = 0;
+            ulong swaps = 0, comparings = 0;
             var analytics = ResourceListener.GetAnalytics(() => Sortings.FlaggedBubbleSort(arrayCopy, out swaps, out comparings), "Сортировка пузырьком с флагом");
             analytics.Swaps = swaps;
             analytics.Comparings = comparings;
@@ -212,7 +214,7 @@
         private static Analytics TestGnomeSort(int[] array)
         {
             int[] arrayCopy = (int[])array.Clone();
-            int swaps = 0, comparings = 0;
+            ulong swaps = 0, comparings = 0;
             var analytics = ResourceListener.GetAnalytics(() => Sortings.GnomeSort(arrayCopy, out swaps, out comparings), "Гномья сортировка");
             analytics.Swaps = swaps;
             analytics.Comparings = comparings;
@@ -222,7 +224,7 @@
         private static Analytics TestInsertionSort(int[] array)
         {
             int[] arrayCopy = (int[])array.Clone();
-            int swaps = 0, comparings = 0;
+            ulong swaps = 0, comparings = 0;
             var analytics = ResourceListener.GetAnalytics(() => Sortings.InsertionSort(arrayCopy, out swaps, out comparings), "Сортировка вставками");
             analytics.Swaps = swaps;
             analytics.Comparings = comparings;
@@ -232,7 +234,7 @@
         private static Analytics TestSelectionSort(int[] array)
         {
             int[] arrayCopy = (int[])array.Clone();
-            int swaps = 0, comparings = 0;
+            ulong swaps = 0, comparings = 0;
             var analytics = ResourceListener.GetAnalytics(() => Sortings.SelectionSort(arrayCopy, out swaps, out comparings), "Сортировка выбором");
             analytics.Swaps = swaps;
             analytics.Comparings = comparings;
@@ -242,7 +244,7 @@
         private static Analytics TestSpiderSort(int[] array)
         {
             int[] arrayCopy = (int[])array.Clone();
-            int swaps = 0, comparings = 0;
+            ulong swaps = 0, comparings = 0;
             var analytics = ResourceListener.GetAnalytics(() => Sortings.SpiderSort(arrayCopy, out swaps, out comparings), "Паучья сортировка");
             analytics.Swaps = swaps;
             analytics.Comparings = comparings;
@@ -252,7 +254,7 @@
         private static Analytics TestStoneSort(int[] array)
         {
             int[] arrayCopy = (int[])array.Clone();
-            int swaps = 0, comparings = 0;
+            ulong swaps = 0, comparings = 0;
             var analytics = ResourceListener.GetAnalytics(() => Sortings.StoneSort(arrayCopy, out swaps, out comparings), "Каменная сортировка");
             analytics.Swaps = swaps;
             analytics.Comparings = comparings;
